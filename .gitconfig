@@ -1,0 +1,20 @@
+[user]
+	name = Teerapap Changwichukarn
+	email = teerapap.c@gmail.com
+
+[alias]
+	dm = daemon --base-path=./ --export-all
+	lg = log --graph --color --decorate
+	lgo = log --graph --color --decorate --oneline
+	st = status -s
+	dc = diff --cached
+	co = checkout
+	rs = remote show
+	stl = stash list
+	sts = stash show
+
+[color]
+	ui = auto
+
+[core]
+	excludesfile = ~/.gitignore_global
