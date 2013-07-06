@@ -8,6 +8,9 @@
 # bash completion following sudo command
 complete -cf sudo
 
+# Init directory colors
+eval `dircolors ~/.dir_colors`
+
 # Prompt definitions.
 [[ -f ~/.bash/prompt ]] && source ~/.bash/prompt
 

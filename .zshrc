@@ -13,6 +13,9 @@ compinit
 promptinit
 # End of lines added by compinstall
 
+# Init directory colors
+eval `dircolors ~/.dir_colors`
+
 # Prompt definitions.
 [[ -f ~/.zsh/prompt ]] && source ~/.zsh/prompt
 
