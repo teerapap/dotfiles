@@ -1,0 +1,13 @@
+
+# functions 
+function git_prompt_info {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+# Load colors
+autoload -U colors && colors
+
+PROMPT="%{$fg[blue]%}[%{$fg[yellow]%}%n@%m:%~%{$fg[blue]%}]%{$fg[green]%}$(git_prompt_info)
+%# %{$reset_color%}"
+
+RPROMPT='[%?]'
