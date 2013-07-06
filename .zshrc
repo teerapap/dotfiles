@@ -21,3 +21,6 @@ eval `dircolors ~/.dir_colors`
 
 # Alias definitions.
 [[ -f ~/.zsh/aliases ]] && source ~/.zsh/aliases
+
+# If not running tmux, run it
+[[ -z "$TMUX" ]] && exec tmux
