@@ -23,4 +23,8 @@ eval `dircolors ~/.dir_colors`
 [[ -f ~/.zsh/aliases ]] && source ~/.zsh/aliases
 
 # If not running tmux, run it
-[[ -z "$TMUX" ]] && exec tmux
+if [[ -z "$TMUX" ]]
+then
+  export TERMINFO=/usr/share/terminfo/x/xterm-256color TERM=xterm-256color  # For vim solarized theme inside tmux
+  exec tmux -2
+fi
