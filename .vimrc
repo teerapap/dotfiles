@@ -3,6 +3,7 @@ execute pathogen#infect()
 
 " Line number
 set number
+set cursorline
 
 " Syntax Highlighting
 syntax enable
