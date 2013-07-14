@@ -27,7 +27,7 @@ set hlsearch    " highlight search result
 " Key mappings
 nnoremap <silent> ,/ :let@/=""<CR>   " clear search pattern
 cnoremap q1 q!                       " typo q1
-
+map <F2> :call ToggleNumber()<CR><CR>
 
 
 
@@ -35,4 +35,15 @@ cnoremap q1 q!                       " typo q1
 au FileType py set autoindent
 au FileType py set smartindent
 au FileType py set textwidth=79 " PEP-8 Friendly
+
+
+" Functions
+
+function! ToggleNumber()
+  if &number
+    set nonumber
+  else
+    set number
+  endif
+endfunction
 
