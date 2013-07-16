@@ -23,6 +23,7 @@ set ruler       " show the cursor position all the time
 set showcmd     " display incomplete commands
 set incsearch   " do incremental searching
 set hlsearch    " highlight search result
+set visualbell  " no beep when press Esc in normal mode
 
 " Key mappings
 nnoremap <silent> ,/ :let@/=""<CR>   " clear search pattern
