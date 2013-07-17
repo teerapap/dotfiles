@@ -1,0 +1,9 @@
+
+## Vim ignore
+
+*.swp
+*.un~
+Session.vim
+.netrwhist
+*~
+
