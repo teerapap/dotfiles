@@ -22,6 +22,9 @@ eval `dircolors ~/.dir_colors`
 # Alias definitions.
 [[ -f ~/.zsh/aliases ]] && source ~/.zsh/aliases
 
+# Load NVM
+[[ -f ~/.nvm/nvm.sh ]] && source ~/.nvm/nvm.sh
+
 # If not running tmux, run it
 if [[ -z "$TMUX" ]]
 then
