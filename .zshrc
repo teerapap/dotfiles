@@ -13,6 +13,9 @@ compinit
 promptinit
 # End of lines added by compinstall
 
+# Environment variables
+[[ -f ~/.zsh/env ]] && source ~/.zsh/env
+
 # Init directory colors
 eval `dircolors ~/.dir_colors`
 

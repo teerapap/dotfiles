@@ -8,6 +8,9 @@
 # bash completion following sudo command
 complete -cf sudo
 
+# Environment variables
+[[ -f ~/.bash/env ]] && source ~/.bash/env
+
 # Init directory colors
 eval `dircolors ~/.dir_colors`
 
