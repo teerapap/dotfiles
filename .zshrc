@@ -25,11 +25,17 @@ eval `dircolors ~/.dir_colors`
 # Alias definitions.
 [[ -f ~/.zsh/aliases ]] && source ~/.zsh/aliases
 
-# Add some dirs to shell path
-[[ -f ~/.zsh/pathenv.sh ]] && source ~/.zsh/pathenv.sh
-
-# Load NVM
-[[ -f ~/.nvm/nvm.sh ]] && source ~/.nvm/nvm.sh
+# Run some environemnt-setup scripts
+if [[ -d ~/.env ]] # Iterate over files in ~/.env
+then
+    for p in `ls ~/.env/*.sh`
+    do
+        if [ -x "$p" ]
+        then
+            source $p
+        fi
+    done
+fi
 
 # If not running tmux, run it
 if [[ -z "$TMUX" ]]
