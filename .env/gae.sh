@@ -1,3 +1,3 @@
 
-export PATH=$PATH:~/dev/google_appengine
+export PATH=$PATH:~/dev/gae
 
