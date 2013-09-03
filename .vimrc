@@ -39,4 +39,10 @@ au FileType py set smartindent
 au FileType py set textwidth=79 " PEP-8 Friendly
 
 
+" For Python
+au FileType go set noexpandtab
+au FileType go set tabstop=2
+au FileType go set list listchars=tab:\ \ ,trail:·    " display extra whitespaces
+
+
 " Functions
