@@ -14,8 +14,8 @@ set t_Co=256
 " Indentation
 filetype plugin indent on
 set expandtab
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 
 " Options
 set list listchars=tab:▷⋅,trail:⋅       " display extra whitespaces
@@ -43,6 +43,8 @@ let g:ctrlp_custom_ignore = {
 " For Python
 au FileType py set autoindent
 au FileType py set smartindent
+au FileType py set shiftwidth=4
+au FileType py set softtabstop=4
 au FileType py set textwidth=79 " PEP-8 Friendly
 
 
