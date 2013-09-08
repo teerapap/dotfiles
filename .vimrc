@@ -33,13 +33,20 @@ map <silent> <F2> :set number!<CR>   " toggle line number
 map <F3>          :set invpaste<CR>  " toggle paste mode
 
 
+" For CtrlP
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](node_modules|bower_components|\.git|\.hg|\.svn)$'
+  \ }
+
+
 " For Python
 au FileType py set autoindent
 au FileType py set smartindent
 au FileType py set textwidth=79 " PEP-8 Friendly
 
 
-" For Python
+" For Go
 au FileType go set noexpandtab
 au FileType go set tabstop=2
 au FileType go set list listchars=tab:\ \ ,trail:·    " display extra whitespaces
