@@ -40,6 +40,11 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 
+" For SuperTab
+let g:SuperTabMappingForward = '<c-j>'
+let g:SuperTabMappingBackward = '<c-k>'
+
+
 " For Python
 au FileType py set autoindent
 au FileType py set smartindent
