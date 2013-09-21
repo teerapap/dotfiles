@@ -27,10 +27,12 @@ set visualbell  " no beep when press Esc in normal mode
 set hidden      " to switch buffer without unsaved warning
 
 " Key mappings
-nnoremap <silent> ,/ :let@/=""<CR>   " clear search pattern
-cnoremap q1 q!                       " typo q1
-map <silent> <F2> :set number!<CR>   " toggle line number
-map <F3>          :set invpaste<CR>  " toggle paste mode
+nnoremap <silent> J :bp<CR>                     " previous buffer
+nnoremap <silent> K :bn<CR>                     " next buffer
+nnoremap <silent> <Leader><BS> :let@/=""<CR>    " clear search pattern
+cnoremap q1 q!                                  " typo q1
+map <silent> <F2> :set number!<CR>              " toggle line number
+map <F3>          :set invpaste<CR>             " toggle paste mode
 
 
 " For CtrlP
