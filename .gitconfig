@@ -12,6 +12,11 @@
 	rs = remote show
 	stl = stash list
 	sts = stash show
+	s = status
+	ts = status
+	its = status
+	c = commit
+	cm = commit
 
 [color]
 	ui = auto
