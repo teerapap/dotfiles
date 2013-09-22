@@ -1,5 +1,28 @@
-" Pathogen
-execute pathogen#infect()
+
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim.git'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'othree/html5.vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdcommenter'
+
+filetype plugin indent on     " required!
+
 
 " Line number
 set number
