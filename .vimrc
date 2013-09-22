@@ -20,6 +20,7 @@ Bundle 'othree/html5.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'Lokaltog/vim-easymotion'
 
 filetype plugin indent on     " required!
 
