@@ -51,6 +51,7 @@ set visualbell  " no beep when press Esc in normal mode
 set hidden      " to switch buffer without unsaved warning
 
 " Key mappings
+let mapleader = " "                             " use <space> as <Leader>
 nnoremap <silent> J :bp<CR>                     " previous buffer
 nnoremap <silent> K :bn<CR>                     " next buffer
 nnoremap <silent> <Leader><BS> :let@/=""<CR>    " clear search pattern
