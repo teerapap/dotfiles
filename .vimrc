@@ -52,12 +52,22 @@ set hidden      " to switch buffer without unsaved warning
 
 " Key mappings
 let mapleader = " "                             " use <space> as <Leader>
-nnoremap <silent> J :bp<CR>                     " previous buffer
-nnoremap <silent> K :bn<CR>                     " next buffer
-nnoremap <silent> <Leader><BS> :let@/=""<CR>    " clear search pattern
-cnoremap q1 q!                                  " typo q1
-map <silent> <F2> :set number!<CR>              " toggle line number
-map <F3>          :set invpaste<CR>             " toggle paste mode
+" previous/next buffer
+nnoremap <silent> J :bp<CR>
+nnoremap <silent> K :bn<CR>
+" clear search pattern
+nnoremap <silent> <Leader><BS> :let@/=""<CR>
+" completion
+inoremap <c-l> <c-X><c-L>
+inoremap <c-i> <c-X><c-I>
+inoremap <c-f> <c-X><c-F>
+inoremap <c-o> <c-X><c-O>
+" typos
+cnoremap q1 q!
+" toggle line number
+map <silent> <F2> :set number!<CR>
+" toggle paste mode
+map <F3>          :set invpaste<CR>
 
 
 " For CtrlP
