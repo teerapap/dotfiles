@@ -59,10 +59,10 @@ map <F3>          :set invpaste<CR>             " toggle paste mode
 
 
 " For CtrlP
-let g:ctrlp_show_hidden = 1
+let g:ctrlp_show_hidden = 0
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](node_modules|bower_components|\.git|\.hg|\.svn|\.cache)$'
-  \,'file': '\v\.(swp)$'
+  \ 'dir':  '\v[\/](node_modules|bower_components|dev/gae|dev/android)$'
+  \,'file': '\v\.(swp|jar|png|jpg|gif|tgz|gz|pdf)$'
   \ }
 
 
