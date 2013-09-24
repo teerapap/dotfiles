@@ -21,6 +21,7 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'derekwyatt/vim-scala'
 
 filetype plugin indent on     " required!
 
