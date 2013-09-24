@@ -60,8 +60,7 @@ nnoremap <silent> K :bn<CR>
 nnoremap <silent> <Leader><BS> :let@/=""<CR>
 " completion
 inoremap <c-l> <c-X><c-L>
-inoremap <c-i> <c-X><c-I>
-inoremap <c-f> <c-X><c-F>
+inoremap <c-t> <c-X><c-F>
 inoremap <c-o> <c-X><c-O>
 " typos
 cnoremap q1 q!
