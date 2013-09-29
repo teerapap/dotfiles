@@ -22,6 +22,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'bling/vim-bufferline'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on     " required!
 
@@ -50,6 +52,8 @@ set incsearch   " do incremental searching
 set hlsearch    " highlight search result
 set visualbell  " no beep when press Esc in normal mode
 set hidden      " to switch buffer without unsaved warning
+set laststatus=2      " always show status bar
+set lazyredraw  " Improve scrolling speed
 
 " Key mappings
 let mapleader = " "                             " use <space> as <Leader>
@@ -76,6 +80,23 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](node_modules|bower_components|dev/gae|dev/android)$'
   \,'file': '\v\.(swp|jar|png|jpg|gif|tgz|gz|pdf)$'
   \ }
+
+
+" For vim-airline
+let g:airline#extensions#bufferline#enabled = 0
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
 
 
 " For Python
