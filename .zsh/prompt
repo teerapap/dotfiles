@@ -7,7 +7,10 @@ function git_prompt_info {
 # Load colors
 autoload -U colors && colors
 
-PROMPT="%{$fg[blue]%}[%{$fg[yellow]%}%n@%m:%~%{$fg[blue]%}]%{$fg[green]%}$(git_prompt_info)
+setopt promptsubst
+local CUR_BRANCH='$(git_prompt_info)'
+
+PROMPT="%{$fg[blue]%}[%{$fg[yellow]%}%n@%m:%~%{$fg[blue]%}]%{$fg[green]%}${CUR_BRANCH}
 %# %{$reset_color%}"
 
 RPROMPT='[%?]'
