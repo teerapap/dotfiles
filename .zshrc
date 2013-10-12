@@ -38,7 +38,7 @@ then
 fi
 
 # If not running tmux, run it
-if [[ -z "$TMUX" ]]
+if [[ -z "$TMUX" ]] && [[ "$TERM" != "rxvt-unicode-256color" ]]
 then
     export TERMINFO=/usr/share/terminfo/x/xterm-256color TERM=xterm-256color  # For vim solarized theme inside tmux
     exec tmux -2

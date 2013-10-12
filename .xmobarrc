@@ -1,0 +1,25 @@
+Config { font = "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"
+    , bgColor = "#000000"
+    , fgColor = "grey"
+    , position = Top
+  , commands = [ 
+      Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+    , Run DynNetwork ["-L","0","-H","70","--normal","green","--high","red","-t","dn|<rx>KB up|<tx>KB <dev>"] 10
+    , Run Wireless "wlan0" ["-t","<essid>(<quality>%)"] 10
+    , Run Memory ["-t","Mem: <usedratio>%"] 10
+    , Run Battery
+        ["-t", "<acstatus>"
+        , "--", "-i", "AC"
+        , "--", "-O", "<fc=green>Charging <left>%</fc> "
+        , "--", "-o", "Battery <left>%"
+        , "-L", "10", "-H", "80"
+        , "-l", "red", "-h", "green"
+        ] 600
+    , Run Kbd [("us", "<fc=skyblue>EN</fc>"), ("th", "<fc=orange>TH</fc>")]
+    , Run Date "%a %b %_d %l:%M" "date" 10
+    , Run StdinReader
+    ]
+    , sepChar = "%"
+    , alignSep = "}{"
+    , template = " %StdinReader% }{ %dynnetwork% ~ <fc=grey>%cpu%</fc><fc=grey> ~ %memory%</fc> ~ %wlan0wi% ~ %battery% ~ %kbd% ~ <fc=#ee9a00>%date%</fc>"
+}
