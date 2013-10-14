@@ -1,8 +1,10 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Util.EZConfig
 import XMonad.Hooks.ManageDocks
+import XMonad.Prompt
+import XMonad.Prompt.Window
+import XMonad.Util.EZConfig
 import XMonad.Util.Run
 import System.IO
 
@@ -92,9 +94,12 @@ main = do
 }`additionalKeys`
       [ ((myModMask, xK_x), kill) -- to kill app
       , ((myModMask, xK_f), spawn "nautilus")
-      , ((myModMask .|. shiftMask, xK_F4), spawn "sudo shutdown -h now") -- to shutdown
-      , ((myModMask .|. shiftMask, xK_r), spawn "sudo reboot") -- to restart
-      , ((myModMask .|. shiftMask, xK_l ), sendMessage NextLayout)
+      , ((myModMask, xK_g), windowPromptGoto defaultXPConfig) -- go to selected window
+      , ((myModMask, xK_b), windowPromptBring defaultXPConfig) -- bring selected window to current workspace
+      , ((myModMask .|. shiftMask, xK_l), spawn "slock") -- lock screen
+      , ((myModMask .|. shiftMask, xK_n), sendMessage NextLayout)
       ]`removeKeys`     -- keys to remove
       [ (myModMask, xK_space)
       ]
+
+
