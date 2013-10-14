@@ -57,7 +57,7 @@ myLayout = avoidStruts $ (tiled ||| Mirror tiled ||| Full)
      nmaster = 1
 
      -- Default proportion of screen occupied by master pane
-     ratio   = toRational (2/(1+sqrt(5)::Double)) -- golden
+     ratio   = toRational (2/(1+sqrt(5)::Double)) + 4/100 -- golden plus small padding
 
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
