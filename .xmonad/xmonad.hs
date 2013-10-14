@@ -16,7 +16,7 @@ import System.IO
 -- By default, do nothing.
 myStartupHook :: X ()
 myStartupHook = do
-      spawn "setxkbmap -layout us,th"
+      spawn "sleep 5 && setxkbmap -layout us,th"
       spawn "xset b off"
       spawn "xset dpms 0 600 1800"
       spawn "xautolock -time 15 -locker slock"
