@@ -16,7 +16,7 @@ Config { font = "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"
         , "-l", "red", "-h", "green"
         ] 600
     , Run Kbd [("us", "<fc=skyblue>EN</fc>"), ("th", "<fc=orange>TH</fc>")]
-    , Run Date "%a %b %_d %l:%M" "date" 10
+    , Run Date "%a %b %_d, %H:%M" "date" 10
     , Run StdinReader
     ]
     , sepChar = "%"
