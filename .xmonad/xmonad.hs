@@ -1,4 +1,5 @@
 import XMonad
+import XMonad.Layout.NoBorders
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
@@ -50,7 +51,7 @@ myWorkspaces    = ["1:web","2:code","3","4","5","6","7","8","9"]
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts $ (tiled ||| Mirror tiled ||| Full)
+myLayout = avoidStruts $ smartBorders $ (tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
