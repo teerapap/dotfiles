@@ -36,8 +36,10 @@ URxvt*boldFont: xft:Monospace:pixelsize=12
 URxvt*letterSpace: -1
 
 ! Scrollbar
-URxvt.scrollStyle:          rxvt
-URxvt.scrollBar:            false
+URxvt.scrollStyle:          plain
+URxvt.scrollBar_right:      true
+URxvt.scrollBar:            true
+URxvt.scrollBar_floating:   true
 
 ! Perl extensions
 URxvt.perl-ext-common:      default,matcher
