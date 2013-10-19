@@ -9,6 +9,8 @@ import XMonad.Util.EZConfig
 import XMonad.Util.Run
 import System.IO
 
+import qualified XMonad.StackSet as W
+
 ------------------------------------------------------------------------
 -- Startup hook
 
@@ -98,9 +100,11 @@ main = do
       , ((myModMask, xK_g), windowPromptGoto defaultXPConfig) -- go to selected window
       , ((myModMask, xK_b), windowPromptBring defaultXPConfig) -- bring selected window to current workspace
       , ((myModMask .|. shiftMask, xK_l), spawn "slock") -- lock screen
+      , ((myModMask .|. shiftMask, xK_m), windows W.swapMaster) -- swap to master
       , ((myModMask .|. shiftMask, xK_n), sendMessage NextLayout)
       ]`removeKeys`     -- keys to remove
       [ (myModMask, xK_space)
+      , (myModMask, xK_Return)
       ]
 
 
