@@ -67,6 +67,26 @@ myLayout = avoidStruts $ smartBorders $ (tiled ||| Mirror tiled ||| Full)
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
 
+
+------------------------------------------------------------------------
+-- Window rules:
+ 
+-- Execute arbitrary actions and WindowSet manipulations when managing
+-- a new window. You can use this to, for example, always float a
+-- particular program, or have a client always appear on a particular
+-- workspace.
+--
+-- To find the property name associated with a program, use
+-- > xprop | grep WM_CLASS
+-- and click on the client you're interested in.
+--
+-- To match on the WM_NAME, you can use 'title' in the same way that
+-- 'className' and 'resource' are used below.
+--
+myManageHook = composeAll
+    [ className =? "jetbrains-android-studio"   --> doShift "2:code"
+    ]
+
 ------------------------------------------------------------------------
 
 myModMask = mod1Mask  -- left alt
@@ -86,7 +106,7 @@ main = do
      ,workspaces          = myWorkspaces
 
 
-     ,manageHook = manageDocks <+> manageHook defaultConfig
+     ,manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig
      ,logHook = dynamicLogWithPP xmobarPP {
             ppOutput = hPutStrLn xmproc,
             ppTitle = xmobarColor "skyblue" "" . shorten 50,
