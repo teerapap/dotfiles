@@ -1,4 +1,5 @@
 import XMonad
+import XMonad.Config.Gnome
 import XMonad.Layout.NoBorders
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
@@ -21,6 +22,7 @@ import qualified XMonad.StackSet as W
 -- By default, do nothing.
 myStartupHook :: X ()
 myStartupHook = do
+      gnomeRegister
       spawn "sleep 5 && setxkbmap -layout us,th"
       spawn "xset b off"
       spawn "xset dpms 0 600 1800"
