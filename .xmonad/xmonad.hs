@@ -117,7 +117,7 @@ main = do
 
 
 }`additionalKeys`
-      [ ((myModMask, xK_x), kill) -- to kill app
+      [ ((myModMask, xK_e), kill) -- to kill app
       , ((myModMask, xK_f), spawn "nautilus")
       , ((myModMask, xK_g), windowPromptGoto defaultXPConfig) -- go to selected window
       , ((myModMask, xK_b), windowPromptBring defaultXPConfig) -- bring selected window to current workspace
