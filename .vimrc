@@ -98,6 +98,11 @@ let g:airline_mode_map = {
       \ '' : 'S',
       \ }
 
+" For Syntastic
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['java'] }
+
 
 " For Python
 au FileType py set autoindent
