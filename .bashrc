@@ -12,7 +12,9 @@ complete -cf sudo
 [[ -f ~/.bash/env ]] && source ~/.bash/env
 
 # Init directory colors
-eval `dircolors ~/.dir_colors`
+if hash dircolors 2>/dev/null; then
+  eval `dircolors ~/.dir_colors`
+fi
 
 # Prompt definitions.
 [[ -f ~/.bash/prompt ]] && source ~/.bash/prompt
@@ -33,8 +35,10 @@ then
 fi
 
 # If not running tmux, run it
-if [[ -z "$TMUX" ]] && [[ "$TERM" != "rxvt-unicode-256color" ]]
+if [[ -z "$TMUX" ]] && [[ "$TERM" != "rxvt-unicode-256color" ]] && hash tmux 2>/dev/null
 then
     export TERMINFO=/usr/share/terminfo/x/xterm-256color TERM=xterm-256color  # For vim solarized theme inside tmux
     exec tmux -2
 fi
+
+
