@@ -45,7 +45,7 @@ set shiftwidth=2
 set softtabstop=2
 
 " Options
-set list listchars=tab:▷⋅,trail:⋅       " display extra whitespaces
+set listchars=tab:▷⋅,trail:⋅       " display extra whitespaces
 set ruler       " show the cursor position all the time
 set showcmd     " display incomplete commands
 set incsearch   " do incremental searching
