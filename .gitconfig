@@ -9,6 +9,7 @@
 	st = status -s
 	dc = diff --cached
 	co = checkout
+	chekcout = checkout
 	rs = remote show
 	stl = stash list
 	sts = stash show
