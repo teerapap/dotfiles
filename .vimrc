@@ -54,6 +54,7 @@ set visualbell  " no beep when press Esc in normal mode
 set hidden      " to switch buffer without unsaved warning
 set laststatus=2      " always show status bar
 set lazyredraw  " Improve scrolling speed
+set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 " Key mappings
 let mapleader = " "                             " use <space> as <Leader>
