@@ -7,3 +7,5 @@ Session.vim
 .netrwhist
 *~
 
+## cscope ignore
+cscope.out
