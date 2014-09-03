@@ -74,8 +74,8 @@ inoremap <c-t> <c-X><c-F>
 inoremap <c-o> <c-X><c-O>
 " Toggle quickfix list
 nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
-nmap <silent> < :cnext<CR>
-nmap <silent> > :cprevious<CR>
+nmap <silent> > :cnext<CR>
+nmap <silent> < :cprevious<CR>
 " typos
 cnoremap q1 q!
 " toggle line number
