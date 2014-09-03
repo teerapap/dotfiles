@@ -60,6 +60,11 @@ let mapleader = " "                             " use <space> as <Leader>
 " previous/next buffer
 nnoremap <silent> J :bp<CR>
 nnoremap <silent> K :bn<CR>
+" window navigation
+nnoremap <Leader>j <C-W>j
+nnoremap <Leader>k <C-W>k
+nnoremap <Leader>h <C-W>h
+nnoremap <Leader>l <C-W>l
 " clear search pattern
 nnoremap <silent> <Leader><BS> :let@/=""<CR>
 " completion
