@@ -24,6 +24,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'bling/vim-bufferline'
 Bundle 'bling/vim-airline'
+Bundle 'teerapap/vim-template'
 
 filetype plugin indent on     " required!
 
@@ -115,6 +116,10 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['java'] }
 let g:syntastic_c_include_dirs = split($SYNTASTIC_C_INCLUDE,':')
+
+" For vim-template
+let g:user = "Teerapap Changwichukarn"
+let g:email = "teerapap.c@gmail.com"
 
 
 " For Python
