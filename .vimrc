@@ -55,6 +55,8 @@ set hidden      " to switch buffer without unsaved warning
 set laststatus=2      " always show status bar
 set lazyredraw  " Improve scrolling speed
 set cscopequickfix=s-,c-,d-,i-,t-,e-
+set exrc        " enable per-directory .vimrc files
+set secure      " disable unsafe commands in local .vimrc files
 
 " Key mappings
 let mapleader = " "                             " use <space> as <Leader>
