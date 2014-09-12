@@ -112,6 +112,7 @@ let g:airline_mode_map = {
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['java'] }
+let g:syntastic_c_include_dirs = split($SYNTASTIC_C_INCLUDE,':')
 
 
 " For Python
