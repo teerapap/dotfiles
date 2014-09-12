@@ -165,3 +165,8 @@ function! ToggleList(bufname, pfx)
   endif
 endfunction
 
+" include local vimrc
+if filereadable($HOME.'/.vimrc.local')
+  source $HOME/.vimrc.local
+endif
+
