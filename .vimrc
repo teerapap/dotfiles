@@ -116,7 +116,7 @@ let g:airline_mode_map = {
 " For Syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['java'] }
+                           \ 'passive_filetypes': ['java','scala'] }
 let g:syntastic_c_include_dirs = split($SYNTASTIC_C_INCLUDE,':')
 
 " For vim-template
