@@ -79,6 +79,8 @@ inoremap <c-o> <c-X><c-O>
 nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
 nmap <silent> > :cnext<CR>
 nmap <silent> < :cprevious<CR>
+" run make command
+nnoremap <silent> <leader>m :make<CR>
 " typos
 cnoremap q1 q!
 " toggle line number
