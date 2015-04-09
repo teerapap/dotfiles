@@ -42,8 +42,8 @@ set t_Co=256
 " Indentation
 filetype plugin indent on
 set expandtab
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 
 " Options
 set listchars=tab:▷⋅,trail:⋅       " display extra whitespaces
