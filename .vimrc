@@ -25,6 +25,10 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'bling/vim-bufferline'
 Bundle 'bling/vim-airline'
 Bundle 'teerapap/vim-template'
+Bundle 'evanmiller/nginx-vim-syntax'
+Bundle 'godlygeek/tabular'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'vim-scripts/haproxy'
 
 filetype plugin indent on     " required!
 
@@ -46,7 +50,7 @@ set shiftwidth=4
 set softtabstop=4
 
 " Options
-set listchars=tab:▷⋅,trail:⋅       " display extra whitespaces
+set listchars=tab:>-   " display extra whitespaces
 set ruler       " show the cursor position all the time
 set showcmd     " display incomplete commands
 set incsearch   " do incremental searching
@@ -123,6 +127,8 @@ let g:syntastic_c_include_dirs = split($SYNTASTIC_C_INCLUDE,':')
 let g:user = "Teerapap Changwichukarn"
 let g:email = "teerapap.c@gmail.com"
 
+" For markdown
+let g:vim_markdown_folding_disabled = 1
 
 " For Python
 au FileType py set autoindent
