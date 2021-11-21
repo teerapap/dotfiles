@@ -1,34 +1,37 @@
 [user]
-	name = Teerapap Changwichukarn
-	email = teerapap.c@gmail.com
+    name = Teerapap Changwichukarn
+    email = teerapap.c@gmail.com
 
 [alias]
-	dm = daemon --base-path=./ --export-all
-	lg = log --graph --color --decorate
-	lgo = log --graph --color --decorate --oneline
-	st = status -s
-	dc = diff --cached
-	co = checkout
-	chekcout = checkout
-	rs = remote show
-	rest = reset
-	stl = stash list
-	sts = stash show
-	s = status
-	ts = status
-	its = status
-	c = commit
-	cm = commit
-	bnm = branch -a --no-merged
-	bm = branch -a --merged
-	count = shortlog --numbered --summary
+    dm = daemon --base-path=./ --export-all
+    lg = log --graph --color --decorate
+    lgo = log --graph --color --decorate --oneline
+    st = status -s
+    dc = diff --cached
+    co = checkout
+    chekcout = checkout
+    rs = remote show
+    rest = reset
+    stl = stash list
+    sts = stash show
+    s = status
+    ts = status
+    its = status
+    c = commit
+    cm = commit
+    bnm = branch -a --no-merged
+    bm = branch -a --merged
+    count = shortlog --numbered --summary
 
 [color]
-	ui = auto
+    ui = auto
 
 [core]
-	excludesfile = ~/.gitignore_global
-	editor = /usr/bin/vim
+    excludesfile = ~/.gitignore_global
+    editor = /usr/bin/vim
 
 [include]
-	path = ~/.gitconfig.local
+    path = ~/.gitconfig.local
+
+[credential]
+    helper = osxkeychain

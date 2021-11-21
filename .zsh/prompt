@@ -13,4 +13,3 @@ local CUR_BRANCH='$(git_prompt_info)'
 PROMPT="%{$fg[blue]%}[%{$fg[yellow]%}%n@%m:%~%{$fg[blue]%}]%{$fg[green]%}${CUR_BRANCH}
 %# %{$reset_color%}"
 
-RPROMPT='[%?]'

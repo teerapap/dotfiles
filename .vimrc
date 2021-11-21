@@ -1,36 +1,40 @@
 
 set nocompatible               " be iMproved
-filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+" UI hnhancements
+Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+Plug 'bling/vim-bufferline'
+Plug 'bling/vim-airline'
 
-" My Bundles here:
-"
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'kien/ctrlp.vim.git'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'othree/html5.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'bling/vim-bufferline'
-Bundle 'bling/vim-airline'
-Bundle 'teerapap/vim-template'
-Bundle 'evanmiller/nginx-vim-syntax'
-Bundle 'godlygeek/tabular'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'vim-scripts/haproxy'
+" Checkers/Linters
+Plug 'vim-syntastic/syntastic'
 
-filetype plugin indent on     " required!
+" Typing helpers
+Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'teerapap/vim-template'
+
+" Command helpers
+Plug 'tpope/vim-fugitive'
+
+
+" Syntax plugins
+Plug 'fladson/vim-kitty'
+Plug 'othree/html5.vim'
+Plug 'chr4/nginx.vim'
+Plug 'vim-scripts/haproxy'
+" tabular is required by vim-markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
+
+" Initialize plugin system
+call plug#end()
 
 
 " Line number
@@ -39,9 +43,6 @@ set cursorline
 
 " Syntax Highlighting
 syntax enable
-set background=dark
-colorscheme solarized
-set t_Co=256
 
 " Indentation
 filetype plugin indent on
@@ -55,7 +56,6 @@ set ruler       " show the cursor position all the time
 set showcmd     " display incomplete commands
 set incsearch   " do incremental searching
 set hlsearch    " highlight search result
-set visualbell  " no beep when press Esc in normal mode
 set hidden      " to switch buffer without unsaved warning
 set laststatus=2      " always show status bar
 set lazyredraw  " Improve scrolling speed
@@ -121,7 +121,11 @@ let g:airline_mode_map = {
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['java','scala'] }
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_c_include_dirs = split($SYNTASTIC_C_INCLUDE,':')
+
 
 " For vim-template
 let g:user = "Teerapap Changwichukarn"
@@ -143,6 +147,9 @@ au FileType go set noexpandtab
 au FileType go set tabstop=2
 au FileType go set list listchars=tab:\ \ ,trail:·    " display extra whitespaces
 
+
+" Custom commands
+com! DiffSaved call s:DiffWithSaved()
 
 " Functions
 
@@ -173,8 +180,20 @@ function! ToggleList(bufname, pfx)
   endif
 endfunction
 
+function! s:DiffWithSaved()
+    let filetype=&ft
+    diffthis
+    vnew | r # | normal! 1Gdd
+    diffthis
+    exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+
 " include local vimrc
 if filereadable($HOME.'/.vimrc.local')
   source $HOME/.vimrc.local
+endif
+" include vimrc in contrib
+if filereadable('./contrib/vimrc')
+  source ./contrib/vimrc
 endif
 
