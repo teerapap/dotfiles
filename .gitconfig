@@ -1,7 +1,6 @@
 [user]
     name = Teerapap Changwichukarn
     email = teerapap.c@gmail.com
-
 [alias]
     dm = daemon --base-path=./ --export-all
     lg = log --graph --color --decorate
@@ -12,6 +11,9 @@
     chekcout = checkout
     rs = remote show
     rest = reset
+    rb = rebase
+    rbc = rebase --continue
+    rba = rebase --abort
     stl = stash list
     sts = stash show
     s = status
@@ -22,16 +24,15 @@
     bnm = branch -a --no-merged
     bm = branch -a --merged
     count = shortlog --numbered --summary
-
+    cp = cherry-pick
 [color]
     ui = auto
-
 [core]
     excludesfile = ~/.gitignore_global
     editor = /usr/bin/vim
-
 [include]
     path = ~/.gitconfig.local
-
 [credential]
     helper = osxkeychain
+[pull]
+    rebase = false
