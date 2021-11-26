@@ -13,7 +13,7 @@ fi
 # Alias definitions.
 [[ -f ~/.zsh/aliases ]] && source ~/.zsh/aliases
 
-# Run some environemnt-setup scripts
+# Run some environment-setup scripts
 if [[ -d ~/.env ]] # Iterate over files in ~/.env
 then
     for p in `ls ~/.env/*.sh`
