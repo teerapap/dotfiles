@@ -31,6 +31,7 @@ Plug 'vim-scripts/haproxy'
 " tabular is required by vim-markdown
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'mechatroner/rainbow_csv'
 
 
 " Initialize plugin system
