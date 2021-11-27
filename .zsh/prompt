@@ -8,13 +8,10 @@ function git_stash_count {
     [ "$cnt" -ne 0 ] && echo "@{$cnt}";
 }
 
-# Load colors
-autoload -U colors && colors
-
 setopt promptsubst
 local CUR_BRANCH='$(git_prompt_info)'
 local CUR_STASH_COUNT='$(git_stash_count)'
 
-PROMPT="%{$fg[blue]%}[%{$fg[yellow]%}%n@%m:%~%{$fg[blue]%}]%{$fg[green]%}${CUR_BRANCH}%{$fg[blue]%}${CUR_STASH_COUNT}%{$fg[green]%}
-%# %{$reset_color%}"
+PROMPT="%F{blue}[%f%F{yellow}%n@%m:%~%f%F{blue}]%f%F{green}${CUR_BRANCH}%F{blue}${CUR_STASH_COUNT}%f
+%F{green}%# %f"
 
