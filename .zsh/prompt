@@ -9,9 +9,20 @@ function git_stash_count {
 }
 
 setopt promptsubst
+
+# User and hostname plus ssh indicator
+if [[ -n "$SSH_CONNECTION" ]]; then
+    PROMPT="%F{blue}[%f%F{magenta}ssh%f%F{blue}»%f%F{yellow}%n@%m:%~%f%F{blue}]%f"
+else
+    PROMPT="%F{blue}[%f%F{yellow}%n@%m:%~%f%F{blue}]%f"
+fi
+
+# git status
 local CUR_BRANCH='$(git_prompt_info)'
 local CUR_STASH_COUNT='$(git_stash_count)'
+PROMPT="$PROMPT%F{green}${CUR_BRANCH}%F{blue}${CUR_STASH_COUNT}%f"
 
-PROMPT="%F{blue}[%f%F{yellow}%n@%m:%~%f%F{blue}]%f%F{green}${CUR_BRANCH}%F{blue}${CUR_STASH_COUNT}%f
+# New input line prompt
+PROMPT="$PROMPT
 %F{green}%# %f"
 
