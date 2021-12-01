@@ -98,7 +98,7 @@ map <F3>          :set invpaste<CR>
 let g:ctrlp_show_hidden = 0
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](node_modules|bower_components|dev/gae|dev/android)$'
-  \,'file': '\v\.(swp|jar|png|jpg|gif|tgz|gz|pdf)$'
+  \,'file': '\v\.(swp|class|jar|png|jpg|gif|tgz|gz|pdf)$'
   \ }
 
 
