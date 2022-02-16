@@ -6,7 +6,7 @@ set nocompatible               " be iMproved
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-" UI hnhancements
+" UI enhancements
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'bling/vim-bufferline'
 Plug 'bling/vim-airline'
@@ -19,9 +19,11 @@ Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'teerapap/vim-template'
 
+" Shortcut helpers
+Plug 'tpope/vim-unimpaired'
+
 " Command helpers
 Plug 'tpope/vim-fugitive'
-
 
 " Syntax plugins
 Plug 'fladson/vim-kitty'
