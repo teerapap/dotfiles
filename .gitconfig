@@ -7,6 +7,8 @@
     lgo = log --graph --color --decorate --oneline
     st = status -s
     dc = diff --cached
+    dw = diff --color-words
+    dcw = diff --cached --color-words
     co = checkout
     chekcout = checkout
     rs = remote show
@@ -25,6 +27,7 @@
     bm = branch -a --merged
     count = shortlog --numbered --summary
     cp = cherry-pick
+    fix = "!vim `git diff --name-only --diff-filter=U`"
 [color]
     ui = auto
 [core]
