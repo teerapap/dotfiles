@@ -13,6 +13,7 @@ alias m='mkdir'
 alias g='git'
 alias gi='git'
 alias got='git'
+alias ggrep='grep --exclude-dir=.git'
 
 
 # xterm-kitty terminfo is not widely installed on remote machine. So this alias lies to the remote machine shell that terminal is xterm-256color.
