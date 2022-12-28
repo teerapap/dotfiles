@@ -166,6 +166,7 @@ au FileType py set textwidth=79 " PEP-8 Friendly
 
 " For Go
 au FileType go set noexpandtab
+au FileType go set shiftwidth=2
 au FileType go set tabstop=2
 au FileType go set list listchars=tab:\ \ ,trail:·    " display extra whitespaces
 au FileType go set autowrite                          " save on build
