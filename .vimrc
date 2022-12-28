@@ -35,6 +35,8 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'mechatroner/rainbow_csv'
 
+" Golang
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Initialize plugin system
 call plug#end()
@@ -166,6 +168,30 @@ au FileType py set textwidth=79 " PEP-8 Friendly
 au FileType go set noexpandtab
 au FileType go set tabstop=2
 au FileType go set list listchars=tab:\ \ ,trail:·    " display extra whitespaces
+au FileType go set autowrite                          " save on build
+au FileType go nmap <Leader>Gr <Plug>(go-run)
+au FileType go nmap <Leader>Gb :<C-u>call <SID>build_go_files()<CR>
+au FileType go nmap <Leader>Gt <Plug>(go-test)
+au FileType go nmap <Leader>Gc <Plug>(go-coverage-toggle)
+au FileType go nmap <Leader>Ga <Plug>(go-alternate-vertical)
+au FileType go nmap <Leader>Gd :GoDecls<CR>
+au FileType go nmap <Leader>Gk <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>Gi <Plug>(go-info)
+
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+
+" For vim-go
+let g:go_template_autocreate = 0    " vim-template takes care of the new file template
+let g:go_doc_keywordprg_enabled = 0  " disable K mapping conflict
 
 
 " Custom commands
