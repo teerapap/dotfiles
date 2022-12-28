@@ -65,10 +65,22 @@ set lazyredraw  " Improve scrolling speed
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 set exrc        " enable per-directory .vimrc files
 set secure      " disable unsafe commands in local .vimrc files
+set splitbelow  " split new window on the below
+set splitright  " split new window on the right
+
+" autocomplete
+set completeopt+=longest   " autocompletion only inserts the longest common text of all the matches
+au CompleteDone * pclose   " autocompletion preview close after done
 
 " Key mappings
 let mapleader = " "                             " use <space> as <Leader>
-" previous/next buffer
+" open/close buffer
+nnoremap <Leader>o :edit 
+nnoremap <Leader>n :enew<CR>
+nnoremap <Leader>d :bdelete<CR>
+" open terminal
+nnoremap <Leader>t :terminal<CR>
+" previous/next/delete buffer
 nnoremap <silent> J :bp<CR>
 nnoremap <silent> K :bn<CR>
 " window navigation
@@ -79,15 +91,20 @@ nnoremap <Leader>l <C-W>l
 " clear search pattern
 nnoremap <silent> <Leader><BS> :let@/=""<CR>
 " completion
-inoremap <c-l> <c-X><c-L>
-inoremap <c-t> <c-X><c-F>
-inoremap <c-o> <c-X><c-O>
-" Toggle quickfix list
-nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
-nmap <silent> > :cnext<CR>
-nmap <silent> < :cprevious<CR>
+imap <c-l> <c-X><c-L>
+imap <c-f> <c-X><c-F>
+imap <c-o> <c-X><c-O>
+
+" Toggle Quickfix
+nnoremap <silent> <expr> <Leader>q empty(filter(getwininfo(), 'v:val.quickfix')) ? ':copen<CR>' : ':cclose<CR>'
+" Unlisted quickfix list
+augroup qf
+  autocmd!
+  autocmd FileType qf set nobuflisted
+augroup END
+
 " run make command
-nnoremap <silent> <leader>m :make<CR>
+nnoremap <silent> <Leader>m :make<CR>
 " typos
 cnoremap q1 q!
 " toggle line number
@@ -155,33 +172,6 @@ au FileType go set list listchars=tab:\ \ ,trail:·    " display extra whitespac
 com! DiffSaved call s:DiffWithSaved()
 
 " Functions
-
-function! GetBufferList()
-  redir =>buflist
-  silent! ls
-  redir END
-  return buflist
-endfunction
-
-function! ToggleList(bufname, pfx)
-  let buflist = GetBufferList()
-  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
-    if bufwinnr(bufnum) != -1
-      exec(a:pfx.'close')
-      return
-    endif
-  endfor
-  if a:pfx == 'l' && len(getloclist(0)) == 0
-      echohl ErrorMsg
-      echo "Location List is Empty."
-      return
-  endif
-  let winnr = winnr()
-  exec(a:pfx.'open')
-  if winnr() != winnr
-    wincmd p
-  endif
-endfunction
 
 function! s:DiffWithSaved()
     let filetype=&ft
