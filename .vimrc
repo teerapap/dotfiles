@@ -12,7 +12,7 @@ Plug 'bling/vim-bufferline'
 Plug 'bling/vim-airline'
 
 " Checkers/Linters
-Plug 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
 
 " Typing helpers
 Plug 'preservim/nerdcommenter'
@@ -45,6 +45,7 @@ call plug#end()
 " Line number
 set number
 set cursorline
+set signcolumn=number				" use number column for sign column too
 
 " Syntax Highlighting
 syntax enable
@@ -125,6 +126,7 @@ let g:ctrlp_custom_ignore = {
 
 " For vim-airline
 let g:airline#extensions#bufferline#enabled = 0
+let g:airline#extensions#ale#enabled = 1
 let g:airline_mode_map = {
       \ '__' : '-',
       \ 'n'  : 'N',
@@ -139,14 +141,8 @@ let g:airline_mode_map = {
       \ '' : 'S',
       \ }
 
-" For Syntastic
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['java','scala'] }
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_c_include_dirs = split($SYNTASTIC_C_INCLUDE,':')
+" For ALE
+set omnifunc=ale#completion#OmniFunc		  " Use ALE completion function
 
 
 " For vim-template
