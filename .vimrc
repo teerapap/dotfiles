@@ -170,29 +170,19 @@ au FileType go set shiftwidth=2
 au FileType go set tabstop=2
 au FileType go set list listchars=tab:\ \ ,trail:·    " display extra whitespaces
 au FileType go set autowrite                          " save on build
-au FileType go nmap <Leader>Gr <Plug>(go-run)
-au FileType go nmap <Leader>Gb :<C-u>call <SID>build_go_files()<CR>
-au FileType go nmap <Leader>Gt <Plug>(go-test)
-au FileType go nmap <Leader>Gc <Plug>(go-coverage-toggle)
-au FileType go nmap <Leader>Ga <Plug>(go-alternate-vertical)
-au FileType go nmap <Leader>Gd :GoDecls<CR>
-au FileType go nmap <Leader>Gk <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>Gi <Plug>(go-info)
-
-" run :GoBuild or :GoTestCompile based on the go file
-function! s:build_go_files()
-  let l:file = expand('%')
-  if l:file =~# '^\f\+_test\.go$'
-    call go#test#Test(0, 1)
-  elseif l:file =~# '^\f\+\.go$'
-    call go#cmd#Build(0)
-  endif
-endfunction
 
 
 " For vim-go
 let g:go_template_autocreate = 0    " vim-template takes care of the new file template
 let g:go_doc_keywordprg_enabled = 0  " disable K mapping conflict
+au FileType go nmap <Leader>gr <Plug>(go-run)
+au FileType go nmap <Leader>gb <Plug>(go-build)
+au FileType go nmap <Leader>gt <Plug>(go-test)
+au FileType go nmap <Leader>gc <Plug>(go-coverage-toggle)
+au FileType go nmap <Leader>ga <Plug>(go-alternate-vertical)
+au FileType go nmap <Leader>gd :GoDecls<CR>
+au FileType go nmap <Leader>gk <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gi <Plug>(go-info)
 
 
 " Custom commands
