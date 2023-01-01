@@ -174,8 +174,9 @@ au FileType py set textwidth=79 " PEP-8 Friendly
 
 " For Go
 au FileType go set noexpandtab
-au FileType go set shiftwidth=2
-au FileType go set tabstop=2
+au FileType go set shiftwidth=4
+au FileType go set softtabstop=4
+au FileType go set tabstop=4
 au FileType go set list listchars=tab:\ \ ,trail:·    " display extra whitespaces
 au FileType go set autowrite                          " save on build
 
@@ -183,14 +184,16 @@ au FileType go set autowrite                          " save on build
 " For vim-go
 let g:go_template_autocreate = 0    " vim-template takes care of the new file template
 let g:go_doc_keywordprg_enabled = 0  " disable K mapping conflict
+let g:go_imports_autosave = 0       " Do not format imports on save to avoid removing unused packages. Run :GoImports manually later
 au FileType go nmap <Leader>gr <Plug>(go-run)
 au FileType go nmap <Leader>gb <Plug>(go-build)
 au FileType go nmap <Leader>gt <Plug>(go-test)
 au FileType go nmap <Leader>gc <Plug>(go-coverage-toggle)
 au FileType go nmap <Leader>ga <Plug>(go-alternate-vertical)
-au FileType go nmap <Leader>gd :GoDecls<CR>
+au FileType go nmap <silent> <Leader>gd :GoDecls<CR>
 au FileType go nmap <Leader>gk <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gi <Plug>(go-info)
+au FileType go nmap <silent> <Leader>gf :GoFmt<CR>:GoImports<CR>
 
 
 " Custom commands
