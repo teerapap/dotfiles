@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
 
 " UI enhancements
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plug 'bling/vim-bufferline'
 Plug 'bling/vim-airline'
 
 " Checkers/Linters
@@ -84,6 +83,8 @@ nnoremap <Leader>o :edit
 nnoremap <silent> <Leader>n :enew<CR>
 nnoremap <silent> <Leader>d :bdelete<CR>
 nnoremap <silent> <Leader>s :w<CR>
+" show buffers list
+nnoremap <Leader>b :buffers<CR>:buffer<Space>
 " open terminal
 nnoremap <Leader>t :terminal<CR>
 " open vimrc
@@ -138,7 +139,6 @@ let g:ctrlp_custom_ignore = {
 
 
 " For vim-airline
-let g:airline#extensions#bufferline#enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:airline_mode_map = {
       \ '__' : '-',
