@@ -73,8 +73,9 @@ set splitbelow  " split new window on the below
 set splitright  " split new window on the right
 
 " autocomplete
-set completeopt+=longest   " autocompletion only inserts the longest common text of all the matches
-au CompleteDone * pclose   " autocompletion preview close after done
+set completeopt+=menuone		" autocompletion shows even only one match
+set completeopt+=noselect   " autocompletion does not auto select the first match
+au CompleteDone * pclose		" autocompletion preview close after done
 
 " Key mappings
 let mapleader = " "                             " use <space> as <Leader>
@@ -98,6 +99,12 @@ nnoremap <silent> <Leader><BS> :let@/=""<CR>
 imap <c-l> <c-X><c-L>
 imap <c-f> <c-X><c-F>
 imap <c-o> <c-X><c-O>
+" Tab/S-Tab to cycle through the completion possible matches
+inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+" Enter to complete the completion menu
+imap <expr> <CR> pumvisible() ? "\<C-y>" : "<CR>"
+
 " Toggle Location list
 nnoremap <silent> <expr> <Leader>l empty(filter(getwininfo(), 'v:val.loclist')) ? ':lopen<CR>' : ':lclose<CR>'
 " Toggle Quickfix
@@ -148,7 +155,6 @@ let g:airline_mode_map = {
       \ }
 
 " For ALE
-set omnifunc=ale#completion#OmniFunc		  " Use ALE completion function
 
 
 " For vim-template
