@@ -18,6 +18,7 @@ Plug 'dense-analysis/ale'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'teerapap/vim-template'
+Plug 'vim-scripts/AutoClose'
 
 " Shortcut helpers
 Plug 'tpope/vim-unimpaired'
@@ -115,6 +116,10 @@ map <silent> <F2> :set number!<CR>
 " toggle paste mode
 map <F3>          :set invpaste<CR>
 
+
+" For AutoClose
+" when insert a { following by enter, inserts the closing brace and put the cursor on a new line between the pair
+inoremap {<CR> {<CR>}<C-o>O
 
 " For CtrlP
 let g:ctrlp_show_hidden = 0
