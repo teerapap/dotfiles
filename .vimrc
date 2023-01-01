@@ -78,27 +78,28 @@ au CompleteDone * pclose   " autocompletion preview close after done
 
 " Key mappings
 let mapleader = " "                             " use <space> as <Leader>
-" open/close buffer
+" open/close/save buffer
 nnoremap <Leader>o :edit 
-nnoremap <Leader>n :enew<CR>
-nnoremap <Leader>d :bdelete<CR>
+nnoremap <silent> <Leader>n :enew<CR>
+nnoremap <silent> <Leader>d :bdelete<CR>
+nnoremap <silent> <Leader>s :w<CR>
 " open terminal
 nnoremap <Leader>t :terminal<CR>
+" open vimrc
+nnoremap <Leader>v :e ~/.vimrc<CR>
 " previous/next/delete buffer
 nnoremap <silent> J :bp<CR>
 nnoremap <silent> K :bn<CR>
 " window navigation
-nnoremap <Leader>j <C-W>j
-nnoremap <Leader>k <C-W>k
-nnoremap <Leader>h <C-W>h
-nnoremap <Leader>l <C-W>l
+nmap <Leader>w <C-W>
 " clear search pattern
 nnoremap <silent> <Leader><BS> :let@/=""<CR>
 " completion
 imap <c-l> <c-X><c-L>
 imap <c-f> <c-X><c-F>
 imap <c-o> <c-X><c-O>
-
+" Toggle Location list
+nnoremap <silent> <expr> <Leader>l empty(filter(getwininfo(), 'v:val.loclist')) ? ':lopen<CR>' : ':lclose<CR>'
 " Toggle Quickfix
 nnoremap <silent> <expr> <Leader>q empty(filter(getwininfo(), 'v:val.quickfix')) ? ':copen<CR>' : ':cclose<CR>'
 " Unlisted quickfix list
