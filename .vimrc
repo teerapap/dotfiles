@@ -135,6 +135,8 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](node_modules|bower_components|dev/gae|dev/android)$'
   \,'file': '\v\.(swp|class|jar|png|jpg|gif|tgz|gz|pdf)$'
   \ }
+let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_root_markers = ['.ctrlp_root']
 
 
 " For vim-airline
