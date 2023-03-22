@@ -17,7 +17,6 @@ Plug 'dense-analysis/ale'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'teerapap/vim-template'
-Plug 'vim-scripts/AutoClose'
 
 " Shortcut helpers
 Plug 'tpope/vim-unimpaired'
