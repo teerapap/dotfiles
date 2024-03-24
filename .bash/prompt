@@ -1,0 +1,25 @@
+
+# functions 
+function git_prompt_info {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+function git_stash_count {
+    cnt=`git stash list 2> /dev/null | wc -l | sed -e 's/^ *//'`
+    [ "$cnt" -ne 0 ] && echo "@{$cnt}";
+}
+
+# git status
+PROMPT_COMMAND='CUR_BRANCH=$(git_prompt_info); CUR_STASH_COUNT=$(git_stash_count)'
+PS1='\[\e[92m\]${CUR_BRANCH}\[\e[94m\]${CUR_STASH_COUNT}\[\e[0m\]'
+
+# User and hostname plus ssh indicator
+if [[ -n "$SSH_CONNECTION" ]]; then
+    PS1="\[\e[94m\][\[\e[95m\]ssh\[\e[94m\]»\[\e[93m\]\u@\h:\w\[\e[94m\]]\[\e[0m\]$PS1"
+else
+    PS1="\[\e[94m\][\[\e[93m\]\u@\h:\w\[\e[94m\]]\[\e[0m\]$PS1"
+fi
+
+# New input line prompt
+PS1="$PS1\n\[\e[92m\]\$\[\e[0m\] "
+
+

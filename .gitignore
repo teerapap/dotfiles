@@ -19,3 +19,9 @@
 !.zsh/env
 !.zsh/prompt
 !.zsh/aliases
+!.bash_profile
+!.bashrc
+!.bash
+!.bash/env
+!.bash/prompt
+!.bash/aliases
