@@ -8,6 +8,8 @@
 !.config/kitty/current-theme.conf
 !.config/windows-terminal
 !.config/windows-terminal/settings.json
+!.config/vscode
+!.config/vscode/settings.json
 !.vim
 !.vim/autoload
 !.vim/autoload/plug.vim

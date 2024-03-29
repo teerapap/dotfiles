@@ -1,0 +1,7 @@
+{
+    "workbench.startupEditor": "none",
+    "editor.fontSize": 16,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "window.confirmBeforeClose": "always",
+    "window.restoreWindows": "none"
+}
