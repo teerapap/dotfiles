@@ -122,3 +122,5 @@ fi
 # Alias definitions.
 [[ -f ~/.bash/aliases ]] && source ~/.bash/aliases
 
+# Expand directory and variable on tab completion
+shopt -s direxpand
