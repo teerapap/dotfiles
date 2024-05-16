@@ -165,7 +165,10 @@
     ],
     "profiles": 
     {
-        "defaults": {},
+        "defaults": 
+        {
+            "bellStyle": "taskbar"
+        },
         "list": 
         [
             {
