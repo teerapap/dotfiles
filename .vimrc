@@ -70,6 +70,19 @@ set secure      " disable unsafe commands in local .vimrc files
 set splitbelow  " split new window on the below
 set splitright  " split new window on the right
 
+" Highlight Color Fixes
+highlight Visual ctermfg=5
+highlight Folded ctermfg=0
+highlight FoldColumn ctermfg=0
+highlight DiffChange ctermfg=0
+highlight SpellBad ctermfg=0
+highlight SpellRare ctermfg=0
+highlight SpellRare ctermfg=0
+highlight CursorColumn ctermfg=0
+highlight ColorColumn ctermfg=0
+highlight QuickFixLine ctermfg=0
+highlight ToolbarLine ctermfg=0
+
 " autocomplete
 set completeopt+=menuone		" autocompletion shows even only one match
 set completeopt+=noselect   " autocompletion does not auto select the first match
