@@ -14,6 +14,25 @@
         {
             "command": 
             {
+                "action": "switchToTab",
+                "index": 7
+            },
+            "keys": "ctrl+8"
+        },
+        {
+            "command": "unbound"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "ctrl+enter"
+        },
+        {
+            "command": 
+            {
                 "action": "newTab"
             },
             "keys": "ctrl+t"
@@ -42,25 +61,6 @@
         {
             "command": "closePane",
             "keys": "ctrl+shift+w"
-        },
-        {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 7
-            },
-            "keys": "ctrl+8"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "down"
-            },
-            "keys": "ctrl+enter"
-        },
-        {
-            "command": "unbound"
         },
         {
             "command": 
